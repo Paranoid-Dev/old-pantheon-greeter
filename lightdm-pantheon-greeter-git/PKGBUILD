@@ -18,7 +18,8 @@ makedepends=('meson' 'git' 'granite' 'libglvnd' 'libxfixes' 'vala'
 provides=('lightdm-pantheon-greeter')
 conflicts=('lightdm-pantheon-greeter')
 install='lightdm-pantheon-greeter.install'
-source=('lightdm-pantheon-greeter::git+https://github.com/Paranoid-Dev/old-pantheon-greeter.git')
+source=('lightdm-pantheon-greeter::git+https://github.com/Paranoid-Dev/old-pantheon-greeter.git'
+        '0001-bin-not-sbin.patch')
 sha256sums=('SKIP'
             'c450c375f7242b33c68bffbc55f3656f80c3f952c67224d55b6cebebe9530763')
 
@@ -36,7 +37,7 @@ prepare() {
 
   cd lightdm-pantheon-greeter
 
-
+  patch -Np1 -i ../0001-bin-not-sbin.patch
 }
 
 build() {
