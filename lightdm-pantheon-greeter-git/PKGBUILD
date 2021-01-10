@@ -13,13 +13,12 @@ groups=('pantheon-unstable')
 depends=('cairo' 'clutter' 'clutter-gtk' 'gdk-pixbuf2' 'glib2' 'glibc' 'gtk3'
          'libgee' 'libgl' 'libx11' 'lightdm'
          'libgranite.so' 'libwingpanel-2.0.so')
-makedepends=('meson' 'git' 'granite-git' 'libglvnd' 'libxfixes' 'vala'
-             'wingpanel-git')
+makedepends=('meson' 'git' 'granite' 'libglvnd' 'libxfixes' 'vala'
+             'wingpanel')
 provides=('lightdm-pantheon-greeter')
 conflicts=('lightdm-pantheon-greeter')
 install='lightdm-pantheon-greeter.install'
-source=('lightdm-pantheon-greeter::git+https://github.com/Paranoid-Dev/old-pantheon-greeter.git'
-        '0001-bin-not-sbin.patch')
+source=('lightdm-pantheon-greeter::git+https://github.com/Paranoid-Dev/old-pantheon-greeter.git')
 sha256sums=('SKIP'
             'c450c375f7242b33c68bffbc55f3656f80c3f952c67224d55b6cebebe9530763')
 
@@ -37,7 +36,7 @@ prepare() {
 
   cd lightdm-pantheon-greeter
 
-  patch -Np1 -i ../0001-bin-not-sbin.patch
+
 }
 
 build() {
