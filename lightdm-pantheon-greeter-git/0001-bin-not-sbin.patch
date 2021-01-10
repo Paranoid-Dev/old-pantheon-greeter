@@ -15,7 +15,7 @@ index 3d27683..c7ea362 100644
      output: 'config.vala',
      configuration: conf_data
  )
--install_path = join_paths(get_option('prefix'), 'sbindir')
+-install_path = join_paths(get_option('prefix'), get_option('sbindir'))
 +install_path = join_paths(get_option('prefix'), 'bin')
  
  executable(
